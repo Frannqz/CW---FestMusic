@@ -3,11 +3,12 @@
 //Pipe: compila
 const { src, dest, watch } = require("gulp"); //Apunta al devDependencies del package.json
 const sass = require('gulp-sass')(require('sass')); //Importamos
-
+const plumber = require('gulp-plumber');
 
 function css(done) {
     //src('src/scss/app.scss')//Identificar el archivo SASS 
     src('src/scss/**/*.scss') //Aqui recorre todos los carpetas/archivos .scss que esten en ese directorio
+        .pipe(plumber())
         .pipe(sass())//Compilar    
         .pipe(dest("build/css")); //Almacenar en disco duro
 
