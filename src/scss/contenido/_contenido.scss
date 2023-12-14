@@ -1,4 +1,5 @@
+@use '../base/variables' as v;
 
-h1{
-    color: $colorh1;
+h1 {
+    color: v.$colorh1;
 }
